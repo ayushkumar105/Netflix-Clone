@@ -1,32 +1,56 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
-import Row from './Row';
-import requests from './requests';
-import Banner from './Banner';
-import Nav from './Nav';
+import Homescreen from './screens/Homescreen';
+import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+import Loginscreen from './screens/Loginscreen';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
+import Profilescreen from './screens/Profilescreen';
+
 //848f3b640fbc12adaabc7e0b4f8841df
 //https://api.themoviedb.org/3/movie/550?api_key=848f3b640fbc12adaabc7e0b4f8841df
 
 
 function App() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+
+  useEffect(() =>{
+    const unsubscribe = onAuthStateChanged(auth, userAuth => {
+      if(userAuth)
+      {
+        dispatch(
+          login({
+          uid: userAuth.uid,
+          email: userAuth.email,
+          })
+        );
+      }
+      else
+      {
+        dispatch(logout());
+      }
+    });
+
+    return unsubscribe;
+
+  },[dispatch]);
+
   return (
     <div className="app">
-      <Nav />
-      <Banner/>
-      <Row 
-      title="NETFLIX ORIGINALS" 
-      fetchUrl={requests.fetchNetflixOriginals} 
-      isLargeRow
-      />
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
-      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
-      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
-      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-      
-
+      <Router>
+        {!user ? (
+          <Loginscreen/>
+        ):
+        (
+        <Routes>
+          <Route exact path='/profile' element={<Profilescreen/>}/>
+          <Route exact path='/' element={<Homescreen />} />
+        </Routes>)}
+      </Router>
     </div>
   );
 }
