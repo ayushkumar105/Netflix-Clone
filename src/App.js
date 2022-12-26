@@ -47,8 +47,8 @@ function App() {
         ):
         (
         <Routes>
-          <Route exact path='/profile' element={<Profilescreen/>}/>
           <Route exact path='/' element={<Homescreen />} />
+          <Route exact path='/profile' element={<Profilescreen/>}/>
         </Routes>)}
       </Router>
     </div>

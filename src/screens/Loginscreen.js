@@ -35,7 +35,7 @@ function Loginscreen() {
                     Watch anywhere. Cancel at any time.
                 </h2>
                 <h3>
-                    Ready to watch? Enter your email to create or restart your membership.
+                    Ready to watch? Enter your email to create an account or press Get Started to login as a guest.
                 </h3>
 
                 <div className='loginScreen__input'>

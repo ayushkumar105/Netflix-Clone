@@ -2,11 +2,12 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'fire
 import React, { useRef } from 'react';
 import { auth } from '../firebase';
 import "./SignInscreen.css";
+import { signInAnonymously } from 'firebase/auth';
 
 function SignInscreen() {
 
-    const emailRef = useRef(null);
-    const passwordRef = useRef(null);
+    const emailRef = useRef("guest@guest.com");
+    const passwordRef = useRef("guest1");
 
 
     const register = (e) => {
@@ -20,7 +21,7 @@ function SignInscreen() {
         {
             alert(error.message);
         });
-        console.log(emailRef.current);
+        
     };
 
     const signIn = (e) => {
@@ -34,8 +35,19 @@ function SignInscreen() {
         {
             alert(error.message);
         });
-        console.log(emailRef.current);
+        
     };
+
+    const signInAnon = (e) => {
+        e.preventDefault();
+        signInAnonymously(auth)
+        .then((authUser) => {
+            console.log(authUser);
+        })
+        .catch((error) => {
+            alert(error.message);
+        });
+    }
 
   return (
     <div className='signInScreen'>
@@ -43,7 +55,10 @@ function SignInscreen() {
             <h1>Sign In</h1>
             <input ref={emailRef} placeholder='Email' type="email" />
             <input ref={passwordRef} placeholder='Password' type="password" />
-            <button type="submit" onClick={signIn}>Sign In</button>
+            <div className='signInScreen__buttons'>
+                <button type="submit" onClick={signIn}>Sign In</button>
+                <button type="submit" onClick={signInAnon}>Login as Guest</button>
+            </div>
             <h4>
                 <span className='signInScreen__gray'>New to Netflix? </span>
                 <span className='signInScreen__link' onClick={register}>Sign Up now.</span>

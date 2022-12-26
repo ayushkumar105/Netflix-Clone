@@ -21,7 +21,7 @@ function Profilescreen() {
           />
           <div className='profileScreen__details'>
             <h2>
-              {user.email}
+              {user.email ? user.email : "Guest"}
             </h2>
             <div className='profileScreen__plans'>
             <button
