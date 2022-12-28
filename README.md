@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Welcome to the Netflix Clone project!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a full-stack web application that allows users to browse movies and TV shows. It includes Sign In, Sign Up, Sign In as a guest and the ability to watch youtube trailers for select movies and TV shows. 
 
-## Available Scripts
+## Features:
 
-In the project directory, you can run:
+  * Responsive and user-friendly interface allowing users to browse content on desktop and mobile devices seamlessly.
+  
+  * Dynamically updates a variety of movie genres using the TMDB API
+  
+  * A comprehensive authentication service powered by Firebase
+  
+  * Ability to create an account using email and password, and can log in to access your account at any time 
+  
+  * View the page without logging in with their credentials
+    
+  * Watch trailers for select movies and TV shows 
+  
+## Usage:
 
-### `npm start`
+  1. Navigate to https://netflix-clone-e2628.web.app/
+  
+  2. You will be presented with the get started page, which displays a get started button. You can click on the `Get Started` button or the `Sign In` button to get the sign in screen. 
+  
+  3. You can either login without credentials by clicking `Login as guest` or you can sign up with your email and a password and click `Sign up now` link. If you already have an account you can login with your email and password with the `Sign In` button.
+  
+  4. You should be at the Homepage now. You can browse a variety of genres of movies and TV shows. You can also watch youtube trailers by just clicking on the movie/TV show icon. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technologies Used:
+  
+  * React.js
+  
+  * Firebase
+  
+  * CSS
+  
+  * TMDB API
+  
+  * Firebase Authentication
+  
+  * Node.js
