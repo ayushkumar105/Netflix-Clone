@@ -1,6 +1,6 @@
 # Welcome to the Netflix Clone project!
 
-This project is a full-stack web application that allows users to browse movies and TV shows. It includes Sign In, Sign Up, Sign In as a guest and the ability to watch youtube trailers for select movies and TV shows. 
+This full-stack web application allows users to browse and watch trailers for movies and TV shows on YouTube. It also includes options for signing in, signing up, and signing in as a guest.
 
 ## Features:
 
